@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const secretkey =require("../../config/keys").JWT_KEY
 
 // Load Input Validation
 const validateRegisterInput = require("../../validation/register");
@@ -63,6 +64,7 @@ router.post("/login", (req, res) => {
           message: "Auth failed",
         });
       }
+      console.log( "secret key", process.env.JWT_KEY)
       bcrypt.compare(req.body.password, user[0].password, (err, result) => {
         if (err) {
           return res.status(401).json({
@@ -75,7 +77,7 @@ router.post("/login", (req, res) => {
               email: user[0].email,
               userId: user[0]._id,
             },
-            process.env.JWT_KEY,
+            secretkey,
             {
               expiresIn: "1h",
             }

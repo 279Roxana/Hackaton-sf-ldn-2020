@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 import SelectNewOpportunity from "./SelectNewOpportunity";
-// import roles from "./dummyData/roles";
+
 // import './index.css'
 /* 
 Registration is a shorter home to fill for users to sign up 
@@ -96,7 +96,7 @@ const NewOpportunityForm = () => {
               </li>
             </ul>
           </form>
-          <button>Submit</button>
+          <button onClick={handleJobInterest}>Submit</button>
         </div>
       </section>
     </div>

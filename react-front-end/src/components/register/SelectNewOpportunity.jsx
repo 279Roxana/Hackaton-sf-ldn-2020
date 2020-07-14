@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import "./index.css";
 const SelectNewOpportunity = ({ handleChange, label, data }) => {
-  //   useEffect(() => {
-  //     fetch("https://sf-hackaton2020.herokuapp.com/api/users")
-  //       .then((req) => req.json())
-  //       .then((data) => console.log(data));
-  //   });
+
   return (
     <div className="selects">
       <label>
